@@ -31,7 +31,7 @@ enum ScheduleType {
 }
 
 struct GlobalConstants {
-    static let TRAVELTIME:Double = -600; // 10 minutes
+    static let TRAVELTIME:Double = -450; // 7 minutes 30
     /// Return the current date with seconds set to zero
     static func getNeutralNow() -> NSDate {
         // 2014-02-20 11:36:20 +0000
@@ -59,11 +59,9 @@ class TrainDatas: NSObject {
     // http://mikebuss.com/2014/06/22/lazy-initialization-swift/
     lazy var scheduleWithMarch:NSDate = {
          [unowned self] in
-        
         return self.getTrainDate().dateByAddingTimeInterval(GlobalConstants.TRAVELTIME);
     }();
     
-
     private var dateFormat:NSDateFormatter = NSDateFormatter.init();
     
     override init() {
