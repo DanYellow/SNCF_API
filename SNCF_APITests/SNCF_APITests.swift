@@ -40,5 +40,4 @@ class SNCF_APITests: XCTestCase {
         
         XCTAssertEqual(foo, 10);
     }
-    
 }

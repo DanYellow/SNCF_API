@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		05D553F09AEF847975A6B50C /* Pods_SNCF_APITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC16FE316329A82A527C3F17 /* Pods_SNCF_APITests.framework */; };
-		1A5EB9F41C407B1E00760613 /* TrainDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC43D1A1C3F16C3003AF0FC /* TrainDatas.swift */; settings = {ASSET_TAGS = (); }; };
-		1A5EB9F51C407B2E00760613 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC43CFC1C3EEB5A003AF0FC /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		1A6102761C41349900A92BFA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6102751C41349900A92BFA /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		1A5EB9F41C407B1E00760613 /* TrainDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC43D1A1C3F16C3003AF0FC /* TrainDatas.swift */; };
+		1A5EB9F51C407B2E00760613 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC43CFC1C3EEB5A003AF0FC /* ViewController.swift */; };
+		1A6102761C41349900A92BFA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6102751C41349900A92BFA /* Constants.swift */; };
 		1AC43CFB1C3EEB5A003AF0FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC43CFA1C3EEB5A003AF0FC /* AppDelegate.swift */; };
 		1AC43D001C3EEB5A003AF0FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC43CFE1C3EEB5A003AF0FC /* Main.storyboard */; };
 		1AC43D021C3EEB5A003AF0FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC43D011C3EEB5A003AF0FC /* Assets.xcassets */; };
 		1AC43D051C3EEB5A003AF0FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC43D031C3EEB5A003AF0FC /* LaunchScreen.storyboard */; };
 		1AC43D101C3EEB5A003AF0FC /* SNCF_APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC43D0F1C3EEB5A003AF0FC /* SNCF_APITests.swift */; };
-		1AC43D1B1C3F16C3003AF0FC /* TrainDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC43D1A1C3F16C3003AF0FC /* TrainDatas.swift */; settings = {ASSET_TAGS = (); }; };
-		1ACA21B01C4074FD0050EBD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC43CFC1C3EEB5A003AF0FC /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1AC43D1B1C3F16C3003AF0FC /* TrainDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC43D1A1C3F16C3003AF0FC /* TrainDatas.swift */; };
+		1ACA21B01C4074FD0050EBD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC43CFC1C3EEB5A003AF0FC /* ViewController.swift */; };
 		BB29392AEA45EFAE42412648 /* Pods_SNCF_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14C04B44006A8C8F8ECB4FD /* Pods_SNCF_API.framework */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +191,7 @@
 				TargetAttributes = {
 					1AC43CF61C3EEB5A003AF0FC = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = VQZZ74C8B2;
 					};
 					1AC43D0A1C3EEB5A003AF0FC = {
 						CreatedOnToolsVersion = 7.0;
@@ -418,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -457,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -470,11 +471,15 @@
 			baseConfigurationReference = 38F3849EFC359DCF3C69353C /* Pods-SNCF_API.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SNCF_API/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jld.SNCF-API";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -483,11 +488,15 @@
 			baseConfigurationReference = F3AC63BCA6D03284572E7E98 /* Pods-SNCF_API.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SNCF_API/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jld.SNCF-API";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -14,7 +14,7 @@ import Alamofire
 
 
 class ViewController: UIViewController {
-    var trainsTimesheets:Array = [TrainDatas]();
+    var trainsTimesheets:[TrainDatas] = [TrainDatas]();
     var element:NSString = "";
     var trainDate:String = "";
     var trainCodeMission:String = "";
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         var nextEligibleTrain:TrainDatas = TrainDatas();
         var getNextEligibleTrain = false;
         
-        let trainsTimesheetsTransformed = trainsTimesheets.flatMap{ $0 }.filter {
+        let trainsTimesheetsTransformed = trainsTimesheets.flatMap{ return $0 }.filter {
             (trainDatas: TrainDatas) -> Bool in
             
             // If the trainDatas' scheduleWithMarch is earlier than now (it means we don't have enough time to reach the station)
@@ -122,7 +122,7 @@ class ViewController: UIViewController {
 
             // create a corresponding local notification
             let notification = UILocalNotification()
-            notification.alertBody = "Un train arrive à \(nextEligibleTrain.getLitteralSchedule()) part maintenant et tu l'auras !"
+            notification.alertBody = "Un train arrive à \(nextEligibleTrain.getLitteralSchedule()) pars maintenant et tu l'auras !"
             notification.alertAction = nil // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
             notification.fireDate = nextEligibleTrain.scheduleWithMarch; // todo item due date (when notification will be fired)
             notification.soundName = UILocalNotificationDefaultSoundName // play default sound
@@ -139,6 +139,10 @@ class ViewController: UIViewController {
         // (viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?)
         // (title: String?, style: UIAlertActionStyle, handler: ((UIAlertAction) -> Void)?)
         alertController.addAction(cancelAction);
+    }
+    
+    func hello () {
+        print("hello");
     }
 
     override func didReceiveMemoryWarning() {
