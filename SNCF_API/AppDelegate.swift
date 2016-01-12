@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+//    var viewController = ViewController();
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:"))) {
@@ -47,6 +47,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+//        viewController.replaceAlert(notification);
+        
+        let alertController = UIAlertController.init(title: "", message: notification.alertBody, preferredStyle: UIAlertControllerStyle.Alert);
+        self.window?.rootViewController!.presentViewController(alertController, animated: true) {};
+        
+        let cancelAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil);
+        // (viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?)
+        // (title: String?, style: UIAlertActionStyle, handler: ((UIAlertAction) -> Void)?)
+        alertController.addAction(cancelAction);
+
+    }
 
 }
 

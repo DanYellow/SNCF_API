@@ -119,17 +119,26 @@ class ViewController: UIViewController {
         } else {
             trainScheduleTimeLabel.text = "Pas de train pour le moment";
             self.view.backgroundColor = UIColor.init(red: (235/255), green: (204/255), blue: (209/255), alpha: 1.0);
-            print("not reachable", trainsTimesheetsTransformed.first?.getTrainDate(), trainsTimesheets.first?.getTrainDate());
-//            print(trainsTimesheets.map{ $0.scheduleWithMarch })
+
             // create a corresponding local notification
             let notification = UILocalNotification()
-            notification.alertBody = "Un train arrivera (presque) en même temps que toi si tu pars maintenant \(NSDate())"
-            notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
-            notification.fireDate = nextEligibleTrain.scheduleWithMarch; // trainsTimesheets.first?.getTrainDate()// todo item due date (when notification will be fired)
+            notification.alertBody = "Un train arrive à \(nextEligibleTrain.getLitteralSchedule()) part maintenant et tu l'auras !"
+            notification.alertAction = nil // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
+            notification.fireDate = nextEligibleTrain.scheduleWithMarch; // todo item due date (when notification will be fired)
             notification.soundName = UILocalNotificationDefaultSoundName // play default sound
             notification.category = "TODO_CATEGORY"
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
         }
+    }
+    
+    func replaceAlert(notification: UILocalNotification) {
+        let alertController = UIAlertController.init(title: "", message: notification.alertBody, preferredStyle: UIAlertControllerStyle.Alert);
+        self.presentViewController(alertController, animated: true) {};
+        
+        let cancelAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil);
+        // (viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?)
+        // (title: String?, style: UIAlertActionStyle, handler: ((UIAlertAction) -> Void)?)
+        alertController.addAction(cancelAction);
     }
 
     override func didReceiveMemoryWarning() {
