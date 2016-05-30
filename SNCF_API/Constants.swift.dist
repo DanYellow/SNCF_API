@@ -1,0 +1,12 @@
+//
+//  Constants.swift
+//  SNCF_API
+//
+//  Created by Jean-Louis Danielo on 09/01/2016.
+//  Copyright © 2016 Jean-Louis Danielo. All rights reserved.
+//
+
+struct Login {
+    static let username:String = "Toast";
+    static let password:String = "MyToast";
+}

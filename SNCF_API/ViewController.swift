@@ -24,8 +24,6 @@ class ViewController: UIViewController {
     var trainState:TrainState = TrainState.ONTIME;
     var trainScheduleType:ScheduleType = ScheduleType.REALTIME;
     
-    // Count the number of iterations in the train
-    var scheduleCount:Int = 0;
 
     @IBOutlet weak var fetchDatas: UIButton!
     @IBOutlet weak var trainScheduleTimeLabel: UILabel!
@@ -57,7 +55,7 @@ class ViewController: UIViewController {
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             self.fetchDatas.enabled = true;
             
-            print(UIApplication.sharedApplication().scheduledLocalNotifications);
+//            print(UIApplication.sharedApplication().scheduledLocalNotifications);
         }
 //        trainScheduleTimeLabel.performSelector(Selector("setEnabled:"), withObject: Bool(true), afterDelay: 10.0);
 //        NSTimer.scheduledTimerWithTimeInterval(1.0, target: fetchDatas, selector: Selector("setEnabled:"), userInfo: nil, repeats: false)
